@@ -1,0 +1,46 @@
+Starting Indexer tests...
+Setting up test environment...
+Testing invalid arguments...
+Test 1: No arguments
+Incorrect number of arguments -> Usage: ./indexer inverted-index-file output-file
+✓ Passed
+----------------------------------------
+Test 2: One argument
+Incorrect number of arguments -> Usage: ./indexer inverted-index-file output-file
+✓ Passed
+----------------------------------------
+Test 3: Three arguments
+Incorrect number of arguments -> Usage: ./indexer inverted-index-file output-file
+✓ Passed
+----------------------------------------
+Test 4: Non-existent directory
+Error: invalid pageDirectory /nonexistent/path
+✓ Passed
+----------------------------------------
+Test 5: Invalid crawler directory
+Error: invalid pageDirectory invalid
+✓ Passed
+----------------------------------------
+Test 6: Read-only output directory
+Error: unable to write index to 'invalid/out.txt' for writing
+✓ Passed
+----------------------------------------
+Test 7: Read-only output file
+Error: unable to write index to 'invalid/index.txt' for writing
+✓ Passed
+----------------------------------------
+Running integration tests...
+Test 8: Building index from small crawler directory
+✓ Passed
+----------------------------------------
+Test 9: Validating index with indextest
+✓ Passed
+----------------------------------------
+Test 10: Comparing index files
+word 'home': docID 1 had different count 2!=1 in index 'index_dir/test1.index'
+word 'home': docID 3 had different count 2!=1 in index 'index_dir/test1.index'
+✗ Failed
+----------------------------------------
+Test Summary:
+Passed: 9/10 tests
+Cleaning up test environment...

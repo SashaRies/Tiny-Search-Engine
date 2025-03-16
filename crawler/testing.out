@@ -1,0 +1,38 @@
+
+Test 1: Testing with invalid number of arguments
+Usage: ./crawler seedURL pageDirectory maxDepth
+
+Test 2: Testing with invalid URL
+Error: invalid or non-internal URL 'not_a_url'
+✓ Test passed: Expected exit status 2$
+
+Test 3: Testing with negative maxDepth
+Error: maxDepth must be between 0 and 10
+✓ Test passed: Expected exit status 4$
+
+Test 4: Testing with maxDepth > 10
+Error: maxDepth must be between 0 and 10
+✓ Test passed: Expected exit status 4$
+
+Test 5: Testing letters site at depth 0
+✓ Test passed: Expected exit status 0$
+✓ Created file for depth 0
+
+Test 6: Testing letters site at depth 1
+✓ Test passed: Expected exit status 0$
+
+Test 7: Testing with different seed page (A.html)
+✓ Test passed: Expected exit status 0$
+
+Test 8: Testing letters site at depth 2
+✓ Test passed: Expected exit status 0$
+
+Test 9: Verifying directory structure
+✓ Test directory structure is correct
+Number of files crawled: 3
+
+Test 10: Checking file content format
+
+Cleaning up test directories...
+
+Testing complete!

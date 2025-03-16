@@ -1,0 +1,44 @@
+# NFS files
+.nfs*
+
+# core dumps
+core
+
+# Object files and libraries
+*.o
+*.a
+a.out
+
+# VS code related files
+*.json
+.vscode/
+*.code-workspace
+
+# Emacs backup and scratch files
+*~
+\#*\#
+.\#*
+
+# debugger symbols
+*.dSYM
+
+# MacOS stuff
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V*
+.Trashes
+
+###########################################################################
+# custom additions below here; see also .gitignore files in subdirectories.
+
+# emacs file
+TAGS
+
+# Do NOT push data files to git.
+# I suggest you create crawler/indexer output in subdirectories of ./data
+data
+index_files
+querier_files

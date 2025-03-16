@@ -1,0 +1,99 @@
+Starting Querier tests...
+Setting up test environment...
+Testing invalid arguments...
+Test 1: No arguments
+Incorrect number of arguments -> Usage: ./querier pageDirectory indexFilename
+✓ Passed
+----------------------------------------
+Test 2: One argument
+Incorrect number of arguments -> Usage: ./querier pageDirectory indexFilename
+✓ Passed
+----------------------------------------
+Test 3: Three arguments
+Incorrect number of arguments -> Usage: ./querier pageDirectory indexFilename
+✓ Passed
+----------------------------------------
+Test 4: Non-existent directory
+Error: invalid pageDirectory /nonexistent/path
+✓ Passed
+----------------------------------------
+Test 5: Non-existent index file
+Error: cannot read /nonexistent/index
+✓ Passed
+----------------------------------------
+Test 6: Invalid crawler directory
+Error: invalid pageDirectory invalid
+✓ Passed
+----------------------------------------
+Testing invalid queries...
+
+Running invalid character queries:
+Error: bad character '!' in query.
+Error: bad character '1' in query.
+Error: bad character '@' in query.
+Test 7: Queries with invalid characters (should handle gracefully)
+✓ Passed
+----------------------------------------
+Testing with valid queries...
+
+Running basic queries:
+Matches 2 documents (ranked):
+score    1 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    1 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Matches 2 documents (ranked):
+score    1 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    1 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Matches 7 documents (ranked):
+score    2 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    2 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+score    1 doc    2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+score    1 doc    4: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+score    1 doc    5: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+score    1 doc    6: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+score    1 doc    7: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Matches 2 documents (ranked):
+score    1 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    1 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+No documents match.
+Test 8: Basic queries
+✓ Passed
+----------------------------------------
+
+Running complex queries:
+No documents match.
+Matches 7 documents (ranked):
+score    2 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    2 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+score    1 doc    2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+score    1 doc    4: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+score    1 doc    5: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+score    1 doc    6: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+score    1 doc    7: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Matches 2 documents (ranked):
+score    1 doc    1: http://cs50tse.cs.dartmouth.edu/tse/letters/
+score    1 doc    3: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Test 9: Complex queries
+✓ Passed
+----------------------------------------
+
+Running edge case queries:
+Error: 'and' cannot be first
+Error: 'or' cannot be first
+Error: 'and' cannot be last
+Error: 'or' cannot be last
+Error: 'and' and 'and' cannot be adjacent
+Error: 'or' and 'or' cannot be adjacent
+Test 10: Edge case queries
+✓ Passed
+----------------------------------------
+Running fuzz tests...
+Generating 10 random queries with fuzzquery...
+usage: /thayerfs/home/f006h3d/cs50-dev/shared/tse/fuzzquery indexFile numQueries randomSeed
+
+Running fuzz-generated queries:
+Test 11: Fuzz-generated queries
+✓ Passed
+----------------------------------------
+Test Summary:
+Passed: 11/11 tests
+Cleaning up test environment...
